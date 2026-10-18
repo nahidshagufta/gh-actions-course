@@ -1,6 +1,11 @@
 name: 02 - Workflow Events
 on: 
-  push
+  push:
+  pull_request:
+    types: [opened, syncronize, reopened, closed]
+  schedule:
+    - cron: '*/2 * * * *'
+  workflow_dispatch:
 
 jobs:
   echo:
